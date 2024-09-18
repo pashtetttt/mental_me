@@ -12,33 +12,33 @@ const UploadPage: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log(file);
-    // Логика отправки файла на сервер
+    // Логика отправки файла
   };
 
   return (
-    <div className="min-h-screen bg-primary flex items-center justify-center">
+    <div className="min-h-screen bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center">
       <form
         onSubmit={handleSubmit}
-        className="bg-light p-8 rounded-lg shadow-lg w-full max-w-md"
+        className="bg-light p-8 rounded-2xl shadow-deep w-full max-w-md"
       >
-        <h2 className="text-2xl font-bold mb-6 text-center text-primary">
-          Загрузить файл
+        <h2 className="text-3xl font-bold mb-8 text-center text-dark">
+          Upload a file
         </h2>
-        <div className="mb-4">
-          <label className="block text-primary mb-1">Выберите файл</label>
+        <div className="mb-6">
+          <label className="block text-dark mb-2 font-semibold">
+            Сhoose file
+          </label>
           <input
             type="file"
-            className="w-full p-2"
+            className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent transition duration-300"
             onChange={handleFileChange}
             accept=".bdf"
           />
-          <p className="text-sm text-gray-500 mt-1">
-            Поддерживаемые форматы: BDF
-          </p>
+          <p className="text-sm text-gray-500 mt-2">Supported formats: BDF</p>
         </div>
         <button
           type="submit"
-          className="bg-accent text-white w-full py-2 rounded"
+          className="w-full py-3 bg-accent text-white font-semibold rounded-lg shadow-lg transform transition duration-500 hover:scale-105"
         >
           Get Results
         </button>

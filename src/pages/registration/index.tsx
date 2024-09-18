@@ -37,92 +37,107 @@ const Registration: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-primary flex items-center justify-center">
+    <div className="min-h-screen bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center">
       <form
         onSubmit={handleSubmit}
-        className="bg-light p-8 rounded-lg shadow-lg w-full max-w-md"
+        className="bg-light p-8 rounded-2xl shadow-deep w-full max-w-4xl max-md:max-w-md"
       >
-        <h2 className="text-2xl font-bold mb-6 text-center text-primary">
-          Регистрация
+        <h2 className="text-3xl font-bold mb-8 text-center text-dark">
+          Registration
         </h2>
-        <div className="mb-4">
-          <label className="block text-primary mb-1">Имя</label>
-          <input
-            name="firstName"
-            type="text"
-            className="w-full p-2 border rounded"
-            onChange={handleChange}
-            required
-          />
+        <div className="grid grid-cols-2 max-md:grid-cols-1 gap-4 items-center">
+          <div className="mb-6">
+            <label className="block text-dark mb-2 font-semibold">Name</label>
+            <input
+              name="firstName"
+              type="text"
+              className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent transition duration-300"
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div className="mb-6">
+            <label className="block text-dark mb-2 font-semibold">
+              Surname
+            </label>
+            <input
+              name="lastName"
+              type="text"
+              className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent transition duration-300"
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div className="mb-6">
+            <label className="block text-dark mb-2 font-semibold">Post</label>
+            <input
+              name="position"
+              type="text"
+              className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent transition duration-300"
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div className="mb-6">
+            <label className="block text-dark mb-2 font-semibold">
+              Institution
+            </label>
+            <input
+              name="institution"
+              type="text"
+              className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent transition duration-300"
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div className="mb-6">
+            <label className="block text-dark mb-2 font-semibold">Email</label>
+            <input
+              name="email"
+              type="email"
+              className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent transition duration-300"
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div className="mb-6">
+            <label className="block text-dark mb-2 font-semibold">
+              Password
+            </label>
+            <input
+              name="password"
+              type="password"
+              className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent transition duration-300"
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div className="mb-6">
+            <label className="block text-dark mb-2 font-semibold">
+              Upload the certificate
+            </label>
+            <input
+              name="certificate"
+              type="file"
+              className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent transition duration-300"
+              onChange={handleFileChange}
+              accept=".pdf"
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="w-full py-3 bg-accent h-11 text-white font-semibold rounded-lg shadow-lg transform transition duration-500 hover:scale-105"
+          >
+            Register
+          </button>
         </div>
-        <div className="mb-4">
-          <label className="block text-primary mb-1">Фамилия</label>
-          <input
-            name="lastName"
-            type="text"
-            className="w-full p-2 border rounded"
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block text-primary mb-1">Должность</label>
-          <input
-            name="position"
-            type="text"
-            className="w-full p-2 border rounded"
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block text-primary mb-1">Учреждение</label>
-          <input
-            name="institution"
-            type="text"
-            className="w-full p-2 border rounded"
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block text-primary mb-1">Email</label>
-          <input
-            name="email"
-            type="email"
-            className="w-full p-2 border rounded"
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block text-primary mb-1">Пароль</label>
-          <input
-            name="password"
-            type="password"
-            className="w-full p-2 border rounded"
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block text-primary mb-1">
-            Загрузить сертификат
-          </label>
-          <input
-            name="certificate"
-            type="file"
-            className="w-full p-2"
-            onChange={handleFileChange}
-            accept=".pdf"
-          />
-        </div>
-        <button
-          type="submit"
-          className="bg-accent text-white w-full py-2 rounded"
-        >
-          Зарегистрироваться
-        </button>
       </form>
     </div>
   );

@@ -9,6 +9,12 @@ export default {
         accent: "#ad49e1",
         light: "#ebd3f7",
       },
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+      },
+      boxShadow: {
+        deep: "0 10px 30px rgba(0, 0, 0, 0.3)",
+      },
     },
   },
   plugins: [],
