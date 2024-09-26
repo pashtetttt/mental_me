@@ -23,7 +23,7 @@ const UploadPage: React.FC = () => {
     formData.append("file", file);
 
     try {
-      const response = await $api.post("/uploadfile/", formData, {
+      const response = await $api.post("/uploadfile", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
