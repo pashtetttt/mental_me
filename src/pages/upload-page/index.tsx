@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import $api from "shared/api/config";
 import { Loading } from "shared/ui/loading";
 
 const UploadPage: React.FC = () => {
   const [file, setFile] = useState<File | null>(null);
   const [showImpulses, setShowImpulses] = useState(false);
+  const [responseHtml, setResponseHtml] = useState<string | null>(null);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
@@ -11,10 +13,28 @@ const UploadPage: React.FC = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(file);
-    // Логика отправки файла
+    if (!file) return;
+
+    setShowImpulses(true); // Показать индикатор загрузки
+
+    const formData = new FormData();
+    formData.append("file", file);
+
+    try {
+      const response = await $api.post("/uploadfile/", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+
+      setResponseHtml(response.data); // Получаем HTML-ответ
+    } catch (error) {
+      console.error("Error uploading file:", error);
+    } finally {
+      setShowImpulses(false); // Скрыть индикатор загрузки
+    }
   };
 
   return (
@@ -41,7 +61,6 @@ const UploadPage: React.FC = () => {
         <button
           type="submit"
           className="w-full py-3 bg-accent text-white font-semibold rounded-lg shadow-lg transform transition duration-500 hover:scale-105"
-          onClick={() => setShowImpulses(true)}
         >
           Get Results
         </button>
@@ -51,7 +70,12 @@ const UploadPage: React.FC = () => {
           showImpulses ? "w-full scale-1" : "w-0 scale-0"
         }`}
       >
-        <Loading className="size-[80px]" color="#3f0f5a" />
+        {responseHtml ? null : (
+          <Loading className="size-[80px]" color="#3f0f5a" />
+        )}
+        {responseHtml && (
+          <div dangerouslySetInnerHTML={{ __html: responseHtml }} />
+        )}
       </div>
     </div>
   );
