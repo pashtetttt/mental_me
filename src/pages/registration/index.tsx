@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Registration: React.FC = () => {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -134,6 +137,7 @@ const Registration: React.FC = () => {
           <button
             type="submit"
             className="w-full py-3 bg-accent h-11 text-white font-semibold rounded-lg shadow-lg transform transition duration-500 hover:scale-105"
+            onClick={() => navigate("/upload-page")}
           >
             Register
           </button>

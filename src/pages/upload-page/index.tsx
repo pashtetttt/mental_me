@@ -73,11 +73,15 @@ const UploadPage: React.FC = () => {
           <div className="bg-light/80 rounded-2xl h-[80px] flex items-center justify-center font-bold text-[24px] flex-col">
             <p>
               <span className="font-semibold">Depression:</span>{" "}
-              <span className="italic">Yes</span>
+              <span className="italic">
+                {Math.random() * 100 > 50 ? "Yes" : "No"}
+              </span>
             </p>
             <p>
               <span className="font-semibold">Probability:</span>{" "}
-              <span className="italic">{Math.trunc(Math.random() * 100)}</span>
+              <span className="italic">
+                {Math.trunc(Math.random() * 12 + 85)}
+              </span>
             </p>
           </div>
         )}
