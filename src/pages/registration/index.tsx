@@ -37,10 +37,10 @@ const Registration: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center">
+    <div className="min-h-screen flex items-center justify-center">
       <form
         onSubmit={handleSubmit}
-        className="bg-light p-8 rounded-2xl shadow-deep w-full max-w-4xl max-md:max-w-md"
+        className="bg-light/80 p-8 rounded-2xl shadow-deep w-full max-w-4xl max-md:max-w-md"
       >
         <h2 className="text-3xl font-bold mb-8 text-center text-dark">
           Registration
