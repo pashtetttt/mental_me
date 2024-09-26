@@ -14,15 +14,16 @@ export const DefaultLayout = () => {
           fill="#7a1dac"
           paused={false}
           style={{
-            height: "100vh",
+            height: "140vh",
             width: "calc(100vw + 400px)",
             position: "absolute",
             top: 0,
             left: -300,
             filter: "blur(50px)",
+            rotate: "-12deg",
           }}
           options={{
-            height: 80,
+            height: 500,
             amplitude: 200,
             speed: 0.075,
             points: 2,
@@ -32,13 +33,14 @@ export const DefaultLayout = () => {
           fill="#ad49e1"
           paused={false}
           style={{
-            height: "100vh",
+            height: "120vh",
             width: "calc(100vw + 200px)",
             position: "absolute",
             top: 0,
             left: -200,
             filter: "blur(1px)",
             opacity: 0.5,
+            rotate: "12deg",
           }}
           options={{
             height: 700,
