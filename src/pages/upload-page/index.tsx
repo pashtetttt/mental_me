@@ -87,14 +87,14 @@ const UploadPage: React.FC = () => {
         )}
       </div>
       <div
-        className={`rounded-2xl max-w-2xl aspect-square transition-all duration-[2000ms] bg-light/80 flex items-center justify-center ${
+        className={`rounded-2xl max-w-2xl aspect-[1.43] transition-all duration-[2000ms] bg-light/80 flex items-center justify-center ${
           showImpulses ? "w-full scale-1" : "w-0 scale-0"
         }`}
       >
         {loading ? <Loading className="size-[80px]" color="#3f0f5a" /> : null}
         {responseHtml && !loading && (
           <iframe
-            className="w-full h-[80%]"
+            className="w-full h-full"
             srcDoc={responseHtml}
             title="response"
           />
