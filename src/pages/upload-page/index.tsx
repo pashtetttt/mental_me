@@ -71,14 +71,14 @@ const UploadPage: React.FC = () => {
         </form>
         {responseHtml && !loading && (
           <div className="bg-light/80 rounded-2xl h-[80px] flex items-center justify-center font-bold text-[24px] flex-col">
-            <p>
-              <span className="font-semibold">Depression:</span>{" "}
+            <p className="flex w-[50%] justify-between">
+              <span className="font-medium">Depression:</span>
               <span className="italic">
                 {Math.random() * 100 > 50 ? "Yes" : "No"}
               </span>
             </p>
-            <p>
-              <span className="font-semibold">Probability:</span>{" "}
+            <p className="flex w-[50%] justify-between">
+              <span className="font-medium">Probability:</span>
               <span className="italic">
                 {Math.trunc(Math.random() * 12 + 85)}
               </span>
